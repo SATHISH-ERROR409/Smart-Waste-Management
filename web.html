@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Waste Bin</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            margin: 0;
+            padding: 0;
+            background-color: #0d1117; /* GitHub dark background */
+            color: #c9d1d9; /* GitHub light gray text */
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #161b22; /* Slightly lighter for header */
+            color: #c9d1d9;
+        }
+
+        .container {
+            display: none;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .greeting {
+            margin: 20px 0;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+            gap: 20px;
+        }
+
+        .box {
+            background-color: #161b22; /* GitHub card background */
+            border: 1px solid #30363d; /* Subtle border */
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #c9d1d9;
+        }
+
+        .box:hover {
+            background-color: #238636; /* GitHub green hover */
+            color: white;
+        }
+
+        button {
+            background-color: #238636; /* GitHub green button */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2ea043; /* Slightly brighter green */
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #30363d;
+            border-radius: 5px;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Welcome Page -->
+    <div id="welcome">
+        <header>
+            <h1>Welcome to the Smart Waste Bin System</h1>
+        </header>
+        <div style="text-align: center; margin-top: 50px;">
+            <button id="enterButton">Enter</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="container">
+        <div>
+            <label for="nameInput">Enter Your Name:</label>
+            <input type="text" id="nameInput" placeholder="Your name here">
+            <button id="submitName">Submit</button>
+        </div>
+        <div class="greeting hidden" id="greeting"></div>
+        <div class="row">
+            <div class="box" id="binLevel">Bin Level</div>
+            <div class="box" id="gasLevel">Gas Level</div>
+            <div class="box" id="binWeight">Weight of Bin</div>
+        </div>
+    </div>
+
+    <script>
+        // Elements
+        const enterButton = document.getElementById('enterButton');
+        const mainContent = document.getElementById('mainContent');
+        const welcome = document.getElementById('welcome');
+        const submitName = document.getElementById('submitName');
+        const nameInput = document.getElementById('nameInput');
+        const greeting = document.getElementById('greeting');
+        const binLevel = document.getElementById('binLevel');
+        const gasLevel = document.getElementById('gasLevel');
+        const binWeight = document.getElementById('binWeight');
+
+        // Enter Button Click Event
+        enterButton.addEventListener('click', () => {
+            welcome.style.display = 'none';
+            mainContent.style.display = 'block';
+        });
+
+        // Name Submission
+        submitName.addEventListener('click', () => {
+            const name = nameInput.value.trim();
+            if (name) {
+                greeting.textContent = `Hello, ${name}!`;
+                greeting.classList.remove('hidden');
+            }
+        });
+
+        // Box Click Events
+        binLevel.addEventListener('click', () => alert('Bin Level details coming soon.'));
+        gasLevel.addEventListener('click', () => alert('Gas Level details coming soon.'));
+        binWeight.addEventListener('click', () => alert('Weight of Bin details coming soon.'));
+    </script>
+</body>
+</html>
