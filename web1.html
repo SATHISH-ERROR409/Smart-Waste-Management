@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Waste Management System</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- For charts -->
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Documentation</a></li>
+      </ul>
+    </nav>
+    <h1>Smart Waste Management System</h1>
+  </header>
+
+  <section class="main-content">
+    <h2>Real-Time Waste Monitoring</h2>
+    <div id="sensor-data">
+      <div class="data-item">
+        <h3>Bin Fullness</h3>
+        <p id="distance">Loading...</p>
+        <canvas id="distanceChart"></canvas>
+      </div>
+      <div class="data-item">
+        <h3>Moisture Level</h3>
+        <p id="moisture">Loading...</p>
+        <canvas id="moistureChart"></canvas>
+      </div>
+      <div class="data-item">
+        <h3>Gas Level</h3>
+        <p id="gas">Loading...</p>
+        <canvas id="gasChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Smart Waste Management System | All Rights Reserved</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
